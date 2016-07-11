@@ -1,0 +1,8 @@
+*.sln
+*.csproj
+Source/UWP
+Source/obj
+Source/App
+Source/Library
+Source/Assets/WSATestCertificate*
+Source/.vs
