@@ -22,7 +22,7 @@ public class WorldCursor : MonoBehaviour
         {
 
             meshRenderer.enabled = true;
-            this.transform.position = (HitInfo.point - this.transform.position) / 10 + this.transform.position;
+            this.transform.position = Vector3.Lerp(this.transform.position, HitInfo.point, 0.25f);
             this.transform.rotation = Quaternion.FromToRotation(Vector3.up, HitInfo.normal);
         }
         else

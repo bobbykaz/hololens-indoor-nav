@@ -14,19 +14,22 @@ public class SpeechManager : MonoBehaviour
 
         keywords.Add("Toggle Follow", () =>
         {
-            if (Map.Instance != null)
-                Map.Instance.Follow = !Map.Instance.Follow;
+            ToggleFollow.Toggle();
         });
 
         keywords.Add("Toggle Mapping", () =>
         {
-            if (SpatialMapping.Instance != null)
-                SpatialMapping.Instance.DrawVisualMeshes = !SpatialMapping.Instance.DrawVisualMeshes;
+            ToggleMapping.Toggle();
         });
 
         keywords.Add("Toggle Cylinders", () =>
         {
-            CylHelper.DebugEnabled = !CylHelper.DebugEnabled;
+            ToggleDebug.Toggle();
+        });
+
+        keywords.Add("Toggle Floor Projection", () =>
+        {
+            MapContainer.Instance.SetFloorProjection();
         });
 
         // Tell the KeywordRecognizer about our keywords.
